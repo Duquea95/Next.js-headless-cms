@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import Link from 'next/link'
 import VariantSelector from './VariantSelector';
 
 function Product(props){
@@ -56,7 +56,9 @@ function Product(props){
 
   return (
     <div className="Product">
-      {props.product.images.edges.length ? <img src={variantImage.src} alt={`${props.product.title} product shot`}/> : null}
+      <Link href={`/product/${encodeURIComponent(props.product.title)}`}>
+          {props.product.images.edges.length ? <img src={variantImage.src} alt={`${props.product.title} product shot`}/> : null}
+      </Link>
       <h5 className="Product__title">{props.product.title}</h5>
       <span className="Product__price">${variant.price}</span>
       {variantSelectors}

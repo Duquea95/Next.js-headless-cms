@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useQuery, useMutation } from '@apollo/react-hooks';
+import Link from 'next/link'
 import Layout from "../components/Layout"
 import Product from '../components/Product';
 import Cart from '../components/Cart';
